@@ -7,7 +7,6 @@ class Mutations::CreateUser < Mutations::BaseMutation
 
     def resolve(name:, email:)
         user = User.new(name: name, email: email)
-        p "THE USER", user
         if user.save
             {
                 user: user,
