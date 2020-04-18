@@ -1,4 +1,4 @@
-class Mutation::CreateUser < Mutations::BaseMutation
+class Mutations::CreateUser < Mutations::BaseMutation
     argument :name, String, required: true
     argument :email, String, required: true
 
@@ -7,11 +7,11 @@ class Mutation::CreateUser < Mutations::BaseMutation
 
     def resolve(name:, email:)
         user = User.new(name: name, email: email)
-
-        if (user.save)
+        p "THE USER", user
+        if user.save
             {
-                user: user
-                error: []
+                user: user,
+                errors: []
             }
         else
             {
