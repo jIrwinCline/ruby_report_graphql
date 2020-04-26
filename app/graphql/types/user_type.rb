@@ -1,13 +1,15 @@
 module Types
   class UserType < Types::BaseObject
     field :id, ID, null: false
-    field :name, String, null: true
+    field :fname, String, null: true
+    field :lname, String, null: true
     field :email, String, null: true
-    field :entries, [Types::EntryType], null: true
-    field :entries_count, Integer, null: true
+    field :dpsst, String, null: true
+    field :reports, [Types::ReportsType], null: true
+    field :reports_count, Integer, null: true
 
-    def entries_count
-      object.entries.size
+    def reports_count
+      object.reports.size
     end
   end
 end
