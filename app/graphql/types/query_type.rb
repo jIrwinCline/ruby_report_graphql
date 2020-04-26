@@ -14,5 +14,9 @@ module Types
     def user(id:)
       User.find(id)
     end
+    field :entries, [Types::EntryType], null: false
+    def entries
+      Entry.all
+    end
   end
 end
