@@ -9,6 +9,6 @@
 5.times do
     user = User.create(name: Faker::Name.name, email: Faker::Internet.email)
     5.times do 
-    user.entries.create(time: Faker::Time.between(from: DateTime.now - 1, to: DateTime.now), text: Faker::Lorem.sentence(sentence_count:4), image: Faker::Lorem::paragraph(word_count: 1))     
+    user.entries.create(time: Faker::Time.between(from: DateTime.now - 1, to: DateTime.now), text: Faker::Lorem.paragraph(sentence_count:4), image: Faker::Lorem::sentence(word_count: 1))     
     end
 end
