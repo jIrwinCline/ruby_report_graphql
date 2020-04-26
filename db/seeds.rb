@@ -14,6 +14,6 @@
             i=0
             entries.push(Entry.new(time: Faker::Time.between(from: DateTime.now - 1, to: DateTime.now), text: Faker::Lorem.paragraph(sentence_count:4), image: Faker::Lorem::sentence(word_count: 1)))
         end
-        user.reports.new(body: entries.join('\n'))
+        user.reports.create!(body: entries.map {|entry| entry.text}.join('\n'))
     end
 end

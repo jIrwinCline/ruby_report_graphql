@@ -1,3 +1,3 @@
 class User < ApplicationRecord
-    has_many :entries
+    has_many :reports
 end
