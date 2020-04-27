@@ -19,9 +19,15 @@ module Types
     def entries
       Entry.all
     end
-    field :report, [Types::BaseString], null: false
-    def report
-      'Hello'
+    # /reports
+    field :reports, [Types::BaseString], null: false
+    def reports
+      Report.make_doc
     end
+
+    # field :download [Types::BaseString], null: false
+    # def download
+    #   puts 'Hello'
+    # end
   end
 end
