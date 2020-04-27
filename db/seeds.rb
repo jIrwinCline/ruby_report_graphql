@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 5.times do
-    user = User.create(fname: Faker::Name.name, lname: Faker::Name.name, email: Faker::Internet.email, dpsst: Faker::Number.number(digits: 6).to_s, encrypted_password: 'password')
+    user = User.create!(fname: Faker::Name.name, lname: Faker::Name.name, email: Faker::Internet.email, dpsst: Faker::Number.number(digits: 6).to_s, password: 'password')
     2.times do
         entries = []
         5.times do
