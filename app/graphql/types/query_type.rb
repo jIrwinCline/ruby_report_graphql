@@ -8,6 +8,7 @@ module Types
       description: "An example field added by the generator"
     def test_field
       "Hello World!"
+    end
     # /users
     field :users, [Types::UserType], null: false
 
@@ -28,16 +29,16 @@ module Types
       Entry.all
     end
     # /reports
-    field :reports, [Types::BaseString], null: false
-    def reports
-      Report.make_doc
-    end
+    # field :reports, [String], null: false
+    # def reports
+    #   Report.make_doc
+    # end
 
     # field :download [Types::BaseString], null: false
     # def download
     #   puts 'Hello'
     # end
-    end
+    
 
   end
 end
