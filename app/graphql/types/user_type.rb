@@ -8,6 +8,7 @@ module Types
     field :dpsst, String, null: true
     field :reports, [Types::ReportType], null: true
     field :reports_count, Integer, null: true
+    field :token, String, null: false
 
     def reports_count
       object.reports.size

@@ -9,7 +9,12 @@ gem 'rails', '~> 6.0.2', '>= 6.0.2.2'
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
+
+gem 'devise-jwt', '~> 0.5.8'                # Use JWT token authentication with devise
+gem 'bcrypt', '~> 3.1.7'                    # Use ActiveModel has_secure_password
 gem 'graphql'
+gem 'graphql-errors'
+gem 'rack-cors'
 # gem 'ffi'
 # gem 'rubypython'
 gem 'puredocx'

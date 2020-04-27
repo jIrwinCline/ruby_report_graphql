@@ -5,9 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
+i=0
 5.times do
-    user = User.create!(fname: Faker::Name.name, lname: Faker::Name.name, email: Faker::Internet.email, dpsst: Faker::Number.number(digits: 6).to_s, password: 'password')
+    i += 1
+    user = User.create!(fname: Faker::Name.name, lname: Faker::Name.name, email: Faker::Internet.email, dpsst: Faker::Number.number(digits: 6).to_s, password: 'password', password_confirmation: 'password', jti: "123XYZ123XYZ#{i}")
     2.times do
         entries = []
         # i = 0
@@ -18,3 +19,13 @@
         user.reports.create!(body: entries.map {|entry| entry.text}.join('\n'))
     end
 end
+
+User.create(
+  email: 'jci@pdx.edu',
+  password: 'password',
+  password_confirmation: 'password',
+  fname: 'Jake',
+  lname: 'Irwin',
+  dpsst: '753253',
+  jti: '123XYZ123XYZ0'
+)

@@ -9,6 +9,9 @@ module Types
     def test_field
       "Hello World!"
     end
+
+    field :me, resolver: Resolvers::Me
+
     # /users
     field :users, [Types::UserType], null: false
 
