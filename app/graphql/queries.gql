@@ -1,0 +1,13 @@
+#Login as jci@pdx.edu
+mutation loginMutation($email: String!, $password: String!) {
+  login(email: $email, password: $password) {
+    fname
+    lname
+    email
+  }
+}
+#variables
+{
+  "email":"jci@pdx.edu",
+  "password": "password"
+}
