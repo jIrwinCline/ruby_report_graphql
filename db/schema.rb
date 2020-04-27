@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 2020_04_27_182431) do
     t.boolean "default"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "report_id", null: false
+    t.bigint "report_id"
     t.index ["report_id"], name: "index_entries_on_report_id"
   end
 
