@@ -8,7 +8,7 @@
 i=0
 5.times do
     i += 1
-    user = User.create!(fname: Faker::Name.name, lname: Faker::Name.name, email: Faker::Internet.email, dpsst: Faker::Number.number(digits: 6).to_s, password: 'password', password_confirmation: 'password', jti: "123XYZ123XYZ#{i}")
+    user = User.create!(fname: Faker::Name.name, lname: Faker::Name.name, email: Faker::Internet.email, dpsst: Faker::Number.number(digits: 6).to_s, password: 'password', password_confirmation: 'password')
     2.times do
         entries = []
         # i = 0
@@ -27,5 +27,5 @@ User.create(
   fname: 'Jake',
   lname: 'Irwin',
   dpsst: '753253',
-  jti: '123XYZ123XYZ0'
+#   jti: '123XYZ123XYZ0'
 )
