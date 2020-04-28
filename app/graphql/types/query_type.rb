@@ -1,5 +1,17 @@
 module Types
   class QueryType < Types::BaseObject
+    # Add root-level fields here.
+    # They will be entry points for queries on your schema.
+    Dotenv.load
+    # TODO: remove me
+    field :test_field, String, null: false,
+      description: "An example field added by the generator"
+    def test_field
+      ENV['DEVISE_JWT_SECRET_KEY']
+    end
+
+    field :me, resolver: Resolvers::Me
+
     # /users
     field :users, [Types::UserType], null: false
 
@@ -20,14 +32,24 @@ module Types
       Entry.all
     end
     # /reports
-    field :reports, [Types::BaseString], null: false
+    field :reports, [Types::ReportType], null: false
     def reports
-      Report.make_doc
+      Report.all
     end
 
-    # field :download [Types::BaseString], null: false
-    # def download
-    #   puts 'Hello'
-    # end
+    field :create_report, Types::UserType, null: false
+      description "generate report based on entries"
+    def create_report
+      context[:current_user]
+    end
+
+    field :fill_report, Types::ReportType, null: false do
+      argument :id, ID, required: true
+    end
+      description "generate report based on entries"
+    def fill_report
+      Report
+    end
+
   end
 end
