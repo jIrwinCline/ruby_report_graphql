@@ -11,3 +11,20 @@ mutation loginMutation($email: String!, $password: String!) {
   "email":"jci@pdx.edu",
   "password": "password"
 }
+mutation createUserMutation($userInput: CreateUserInput!){
+  createUser(input: $userInput) {
+    user {
+      id
+      fname
+    }
+  }
+}
+  "userInput": {
+    "email":"jakobinwins@gmail.com",
+    "password": "password",
+    "fname":"Jake",
+    "lname":"Irwin",
+    "passwordConfirmation":"password",
+    "dpsst":"75323",
+  }
+}

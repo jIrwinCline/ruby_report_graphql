@@ -4,5 +4,4 @@ Rails.application.routes.draw do
   end
   post "/graphql", to: "graphql#execute"
   devise_for :users
-
 end

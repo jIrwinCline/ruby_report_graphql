@@ -13,6 +13,7 @@ class Mutations::User::Login < GraphQL::Schema::Mutation
     is_valid_for_auth = user.valid_for_authentication?{
       user.valid_password?(password)
     }
+    # byebug
     return is_valid_for_auth ? user : nil
   end
 

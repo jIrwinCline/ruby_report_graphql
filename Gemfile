@@ -20,6 +20,7 @@ gem 'rack-cors'
 gem 'puredocx'
 gem 'caracal'
 gem 'devise'
+gem 'dotenv'
 # gem 'caracal-rails'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # gem 'jbuilder', '~> 2.7'
